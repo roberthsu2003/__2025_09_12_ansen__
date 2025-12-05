@@ -29,8 +29,8 @@ def get_speed(score):
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 pygame.display.set_caption("Snake Game")
 clock = pygame.time.Clock()
-font = pygame.font.Font(None, 36)
-big_font = pygame.font.Font(None, 72)
+font = pygame.font.Font("NotoSansTC-Regular.ttf", 36)
+big_font = pygame.font.Font("NotoSansTC-Regular.ttf", 72)
 
 
 class Snake:
@@ -122,7 +122,7 @@ def draw_game_over(surface, score):
     overlay.fill(BLACK)
     surface.blit(overlay, (0, 0))
 
-    game_over_text = big_font.render("GAME OVER", True, RED)
+    game_over_text = big_font.render("遊戲結束", True, RED)
     text_rect = game_over_text.get_rect(center=(WINDOW_WIDTH // 2,
                                                 WINDOW_HEIGHT // 2 - 50))
     surface.blit(game_over_text, text_rect)
