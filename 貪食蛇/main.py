@@ -27,7 +27,7 @@ def get_speed(score):
 
 
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
-pygame.display.set_caption("貪食蛇遊戲")
+pygame.display.set_caption("Snake Game")
 clock = pygame.time.Clock()
 font = pygame.font.Font(None, 36)
 big_font = pygame.font.Font(None, 72)
