@@ -112,7 +112,7 @@ def draw_grid(surface):
 
 
 def draw_score(surface, score):
-    score_text = font.render(f"Score: {score}", True, WHITE)
+    score_text = font.render(f"分數: {score}", True, WHITE)
     surface.blit(score_text, (10, 10))
 
 
@@ -127,12 +127,12 @@ def draw_game_over(surface, score):
                                                 WINDOW_HEIGHT // 2 - 50))
     surface.blit(game_over_text, text_rect)
 
-    score_text = font.render(f"Final Score: {score}", True, WHITE)
+    score_text = font.render(f"最終分數: {score}", True, WHITE)
     score_rect = score_text.get_rect(center=(WINDOW_WIDTH // 2,
                                              WINDOW_HEIGHT // 2 + 20))
     surface.blit(score_text, score_rect)
 
-    restart_text = font.render("Press SPACE to restart or ESC to quit", True,
+    restart_text = font.render("按[空白鍵]開始,按[ESC]離開", True,
                                WHITE)
     restart_rect = restart_text.get_rect(center=(WINDOW_WIDTH // 2,
                                                  WINDOW_HEIGHT // 2 + 70))
@@ -142,12 +142,12 @@ def draw_game_over(surface, score):
 def draw_start_screen(surface):
     surface.fill(BLACK)
 
-    title_text = big_font.render("SNAKE GAME", True, GREEN)
+    title_text = big_font.render("貪食蛇遊戲", True, GREEN)
     title_rect = title_text.get_rect(center=(WINDOW_WIDTH // 2,
                                              WINDOW_HEIGHT // 2 - 50))
     surface.blit(title_text, title_rect)
 
-    start_text = font.render("Press SPACE to start", True, WHITE)
+    start_text = font.render("按空白鍵開始遊戲", True, WHITE)
     start_rect = start_text.get_rect(center=(WINDOW_WIDTH // 2,
                                              WINDOW_HEIGHT // 2 + 30))
     surface.blit(start_text, start_rect)
