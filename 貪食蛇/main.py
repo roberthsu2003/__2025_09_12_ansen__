@@ -6,7 +6,7 @@ pygame.init()
 
 WINDOW_WIDTH = 800
 WINDOW_HEIGHT = 500
-GRID_SIZE = 20
+GRID_SIZE = 30
 GRID_WIDTH = WINDOW_WIDTH // GRID_SIZE
 GRID_HEIGHT = WINDOW_HEIGHT // GRID_SIZE
 
@@ -132,8 +132,7 @@ def draw_game_over(surface, score):
                                              WINDOW_HEIGHT // 2 + 20))
     surface.blit(score_text, score_rect)
 
-    restart_text = font.render("按[空白鍵]開始,按[ESC]離開", True,
-                               WHITE)
+    restart_text = font.render("按[空白鍵]開始,按[ESC]離開", True, WHITE)
     restart_rect = restart_text.get_rect(center=(WINDOW_WIDTH // 2,
                                                  WINDOW_HEIGHT // 2 + 70))
     surface.blit(restart_text, restart_rect)
@@ -204,7 +203,7 @@ def main():
 
             if snake.body[0] == food.position:
                 snake.grow = True
-                score += 10
+                score += 5
                 food.spawn(snake.body)
 
         screen.fill(BLACK)
