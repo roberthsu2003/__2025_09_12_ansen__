@@ -17,13 +17,14 @@ DARK_GREEN = (0, 150, 0)
 RED = (220, 50, 50)
 GRAY = (40, 40, 40)
 
-START_FPS = 5
+START_FPS = 7
 MAX_FPS = 15
 
 
 def get_speed(score):
     speed = START_FPS + (score // 30)
     return min(speed, MAX_FPS)
+
 
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 pygame.display.set_caption("貪食蛇遊戲")
@@ -33,6 +34,7 @@ big_font = pygame.font.Font(None, 72)
 
 
 class Snake:
+
     def __init__(self):
         self.reset()
 
@@ -81,6 +83,7 @@ class Snake:
 
 
 class Food:
+
     def __init__(self):
         self.position = (0, 0)
         self.spawn()
@@ -120,15 +123,19 @@ def draw_game_over(surface, score):
     surface.blit(overlay, (0, 0))
 
     game_over_text = big_font.render("GAME OVER", True, RED)
-    text_rect = game_over_text.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2 - 50))
+    text_rect = game_over_text.get_rect(center=(WINDOW_WIDTH // 2,
+                                                WINDOW_HEIGHT // 2 - 50))
     surface.blit(game_over_text, text_rect)
 
     score_text = font.render(f"Final Score: {score}", True, WHITE)
-    score_rect = score_text.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2 + 20))
+    score_rect = score_text.get_rect(center=(WINDOW_WIDTH // 2,
+                                             WINDOW_HEIGHT // 2 + 20))
     surface.blit(score_text, score_rect)
 
-    restart_text = font.render("Press SPACE to restart or ESC to quit", True, WHITE)
-    restart_rect = restart_text.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2 + 70))
+    restart_text = font.render("Press SPACE to restart or ESC to quit", True,
+                               WHITE)
+    restart_rect = restart_text.get_rect(center=(WINDOW_WIDTH // 2,
+                                                 WINDOW_HEIGHT // 2 + 70))
     surface.blit(restart_text, restart_rect)
 
 
@@ -136,15 +143,18 @@ def draw_start_screen(surface):
     surface.fill(BLACK)
 
     title_text = big_font.render("SNAKE GAME", True, GREEN)
-    title_rect = title_text.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2 - 50))
+    title_rect = title_text.get_rect(center=(WINDOW_WIDTH // 2,
+                                             WINDOW_HEIGHT // 2 - 50))
     surface.blit(title_text, title_rect)
 
     start_text = font.render("Press SPACE to start", True, WHITE)
-    start_rect = start_text.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2 + 30))
+    start_rect = start_text.get_rect(center=(WINDOW_WIDTH // 2,
+                                             WINDOW_HEIGHT // 2 + 30))
     surface.blit(start_text, start_rect)
 
     controls_text = font.render("Use arrow keys to move", True, GRAY)
-    controls_rect = controls_text.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2 + 80))
+    controls_rect = controls_text.get_rect(center=(WINDOW_WIDTH // 2,
+                                                   WINDOW_HEIGHT // 2 + 80))
     surface.blit(controls_text, controls_rect)
 
 
@@ -219,4 +229,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
